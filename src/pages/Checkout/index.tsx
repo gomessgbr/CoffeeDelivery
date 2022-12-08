@@ -3,7 +3,7 @@ import { CheckoutContainer } from './styles'
 export function Checkout() {
   return (
     <CheckoutContainer>
-      <div></div>
+      <div>Checkout</div>
     </CheckoutContainer>
   )
 }
