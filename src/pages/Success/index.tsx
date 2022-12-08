@@ -3,7 +3,7 @@ import { SuccessContainer } from './styles'
 export function Success() {
   return (
     <SuccessContainer>
-      <div></div>
+      <div>Success</div>
     </SuccessContainer>
   )
 }
