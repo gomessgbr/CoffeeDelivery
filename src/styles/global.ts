@@ -12,13 +12,13 @@ export const GlobalStyle = createGlobalStyle`
 
 
 body{
+    background: ${({theme})=> theme['white-100']};
 
     -webkit-font-smoothing: antialiased
 }
-    body, input, button{
+    body, input, button, text{
         font-family: 'Roboto', sans-serif;
-        font-weight: 400;
-        font-size: 1rem;
+       
     }
 
 `
