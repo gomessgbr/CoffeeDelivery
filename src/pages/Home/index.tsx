@@ -3,7 +3,7 @@ import { HomeContainer } from './styles'
 export function Home() {
   return (
     <HomeContainer>
-      <div></div>
+      <div>Home</div>
     </HomeContainer>
   )
 }
