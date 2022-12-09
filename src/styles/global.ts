@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
 
 body{
     background: ${({ theme }) => theme['white-100']};
+    max-width: 90rem;
 
     -webkit-font-smoothing: antialiased
 }
