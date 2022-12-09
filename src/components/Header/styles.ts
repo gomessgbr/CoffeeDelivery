@@ -11,7 +11,16 @@ export const HeaderContainer = styled.div`
 
 export const HeaderNav = styled.nav`
   display: flex;
-  gap: 2rem;
+  gap: 0.75rem;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background: ${({ theme }) => theme[`yellow-100`]};
+    border-radius: 6px;
+  }
 `
 
 export const LocaleContainer = styled.div`

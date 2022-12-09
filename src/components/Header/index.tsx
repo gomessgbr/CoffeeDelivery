@@ -13,7 +13,7 @@ export function Header() {
           São Paulo, SP
         </LocaleContainer>
         <NavLink to="Checkout" title="carrinho">
-          <ShoppingCart size={24} />
+          <ShoppingCart size={24} color="#C47F17" weight="fill" />
         </NavLink>
       </HeaderNav>
     </HeaderContainer>
