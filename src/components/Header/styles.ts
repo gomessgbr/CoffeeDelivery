@@ -9,4 +9,18 @@ export const HeaderContainer = styled.div`
   padding: 2rem 10rem;
 `
 
-export const LocaleContainer = styled.div``
+export const HeaderNav = styled.nav`
+  display: flex;
+  gap: 2rem;
+`
+
+export const LocaleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: ${({ theme }) => theme['purple-100']};
+  padding: 0.5rem;
+  gap: 0.25rem;
+  border-radius: 6px;
+`
