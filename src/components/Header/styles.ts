@@ -19,7 +19,7 @@ export const HeaderNav = styled.nav`
     align-items: center;
     justify-content: center;
     padding: 0.5rem;
-    background: ${({ theme }) => theme[`yellow-100`]};
+    background: ${({ theme }) => theme.colors[`yellow-100`]};
     border-radius: 6px;
   }
 `
@@ -29,7 +29,7 @@ export const LocaleContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  background: ${({ theme }) => theme['purple-100']};
+  background: ${({ theme }) => theme.colors['purple-100']};
   padding: 0.5rem;
   gap: 0.25rem;
   border-radius: 6px;
