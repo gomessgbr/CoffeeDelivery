@@ -2,12 +2,10 @@ import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
   display: flex;
-  width: 100%;
-  max-height: 34rem;
+  height: 36rem;
   align-items: center;
   justify-content: center;
   margin: 0 5.5rem;
-  padding: 0;
   left: 5.5rem;
   right: -5.5rem;
   top: 8.0625rem;
@@ -28,7 +26,6 @@ export const HomeHeaderTitle = styled.div`
   gap: 1rem;
   left: calc(50% - 36.75rem / 2 - 16.625rem);
   top: calc(50% - 12rem / 2 - 5.125rem);
-  background-color: aquamarine;
 `
 
 export const HomeTitle = styled.text`
@@ -39,6 +36,13 @@ export const HomeTitle = styled.text`
   line-height: 3.875rem;
 `
 
-export const HomeHeaderSubTitle = styled.div``
+export const HomeHeaderSubTitle = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 5.3rem;
+  justify-content: space-around;
+  background-color: aquamarine;
+`
 
 export const HomeHeaderImg = styled.img``
