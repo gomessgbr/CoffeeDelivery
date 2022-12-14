@@ -7,39 +7,40 @@ import {
   HomeHeaderImg,
   HomeHeaderSubTitle,
   HomeTitle,
-} from './styles'   
+  HomeHeaderTitle,
+} from './styles'
 export function HeaderHome() {
   return (
     <HeaderHomeContainer>
       <HeaderHomeContent>
-        <HomeHeaderSubTitle>
+        <HomeHeaderTitle>
           <HomeTitle>
             Encontre o café perfeito para qualquer hora do dia
           </HomeTitle>
-          <span>
+          <section>
             Com o Coffee Delivery você recebe seu café onde estiver, a {'\n'}
             qualquer hora
-          </span>
-        </HomeHeaderSubTitle>
+          </section>
+        </HomeHeaderTitle>
         <HomeHeaderSubTitle>
           <span>
-            <ShoppingCart className="shopIcon" size={20} />
+            <ShoppingCart className="shopIcon" size={20} weight="fill" />
             Compra simples e segura
           </span>
 
           <span>
-            <Timer className="timerIcon" size={20} />
+            <Timer className="timerIcon" size={20} weight="fill" />
             Entrega rápida e rastreada
           </span>
 
           <span>
-            <Package className="packageIcon" size={20} />
+            <Package className="packageIcon" size={20} weight="fill" />
             Embalagem mantém o café intacto
           </span>
 
           <span>
-            <Coffee className="coffeeIcon" size={20} />O café chega fresquinho
-            até você
+            <Coffee className="coffeeIcon" size={20} weight="fill" />O café
+            chega fresquinho até você
           </span>
         </HomeHeaderSubTitle>
       </HeaderHomeContent>
