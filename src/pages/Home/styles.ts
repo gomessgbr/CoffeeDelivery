@@ -23,6 +23,7 @@ export const HomeHeaderTitle = styled.div`
   flex-direction: column;
   width: 36.75rem;
   height: 12rem;
+  margin-bottom: 3.75rem;
   gap: 1rem;
   left: calc(50% - 36.75rem / 2 - 16.625rem);
   top: calc(50% - 12rem / 2 - 5.125rem);
@@ -38,11 +39,28 @@ export const HomeTitle = styled.text`
 
 export const HomeHeaderSubTitle = styled.div`
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  width: 100%;
-  height: 5.3rem;
+  height: 5.25rem;
   justify-content: space-around;
-  background-color: aquamarine;
+  align-items: baseline;
+
+  span {
+    display: flex;
+    height: 2rem;
+
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.3rem;
+    font-family: ${({ theme }) => theme.fonts.regular};
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  svg {
+    background-color: aqua;
+  }
 `
 
 export const HomeHeaderImg = styled.img``
