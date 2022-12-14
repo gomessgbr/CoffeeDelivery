@@ -24,10 +24,24 @@ export function Home() {
           </span>
         </HomeHeaderTitle>
         <HomeHeaderSubTitle>
-          <ShoppingCart size={15} /> <span>Compra simples e segura</span>
-          <Timer size={15} /> <span>Entrega rápida e rastreada</span>
-          <Package size={15} /> <span>Embalagem mantém o café intacto</span>
-          <Coffee size={15} /> <span>O café chega fresquinho até você</span>
+          <span>
+            <ShoppingCart size={20} />
+            Compra simples e segura
+          </span>
+
+          <span>
+            <Timer size={20} />
+            Entrega rápida e rastreada
+          </span>
+
+          <span>
+            <Package size={20} />
+            Embalagem mantém o café intacto
+          </span>
+
+          <span>
+            <Coffee size={20} />O café chega fresquinho até você
+          </span>
         </HomeHeaderSubTitle>
       </HomeHeader>
       <div>
