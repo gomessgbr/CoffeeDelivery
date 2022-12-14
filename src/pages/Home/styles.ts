@@ -58,8 +58,33 @@ export const HomeHeaderSubTitle = styled.div`
     font-weight: 400;
   }
 
-  svg {
+  .shopIcon {
     background-color: aqua;
+    height: 2rem;
+    width: 2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+  .timerIcon {
+    background-color: aqua;
+    height: 2rem;
+    width: 2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+  .coffeeIcon {
+    background-color: aqua;
+    height: 2rem;
+    width: 2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+  .packageIcon {
+    background-color: aqua;
+    height: 2rem;
+    width: 2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
   }
 `
 
