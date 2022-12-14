@@ -49,7 +49,6 @@ export const HomeHeaderSubTitle = styled.div`
   span {
     display: flex;
     height: 2rem;
-
     gap: 0.75rem;
     align-items: center;
     justify-content: center;
@@ -60,28 +59,34 @@ export const HomeHeaderSubTitle = styled.div`
   }
 
   .shopIcon {
-    background-color: aqua;
+    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors['yellow-300']};
     height: 2rem;
     width: 2rem;
     padding: 0.5rem;
     border-radius: 50%;
   }
   .timerIcon {
-    background-color: aqua;
+    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors['yellow-200']};
     height: 2rem;
     width: 2rem;
     padding: 0.5rem;
     border-radius: 50%;
   }
   .coffeeIcon {
-    background-color: aqua;
+    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors['purple-200']};
+
     height: 2rem;
     width: 2rem;
     padding: 0.5rem;
     border-radius: 50%;
   }
   .packageIcon {
-    background-color: aqua;
+    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors['gray-600']};
+
     height: 2rem;
     width: 2rem;
     padding: 0.5rem;
@@ -89,6 +94,10 @@ export const HomeHeaderSubTitle = styled.div`
   }
 `
 
-export const HomeHeaderContainer = styled.div``
+export const HomeHeaderContainer = styled.div`
+  display: flex;
+  height: 22.5rem;
+  margin: 5.75rem 3.5rem;
+`
 
 export const HomeHeaderImg = styled.img``
