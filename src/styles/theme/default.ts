@@ -19,8 +19,4 @@ export const defaultTheme = {
     'yellow-200': '#DBAC2C',
     'yellow-300': '#C47F17',
   },
-  fonts: {
-    regular: 'Roboto',
-    title: 'Baloo 2',
-  },
 }
