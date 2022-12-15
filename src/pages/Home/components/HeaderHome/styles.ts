@@ -30,7 +30,7 @@ export const HomeHeaderTitle = styled.div`
   top: calc(50% - 12rem / 2 - 5.125rem);
 `
 
-export const HomeTitle = styled.text`
+export const HomeTitle = styled.p`
   font-family: 'Baloo 2';
   font-style: normal;
   font-weight: 800;
@@ -53,7 +53,7 @@ export const HomeHeaderSubTitle = styled.div`
     align-items: center;
     justify-content: center;
     line-height: 1.3rem;
-    font-family: ${({ theme }) => theme.fonts.regular};
+    font-family: 'Roboto';
     font-size: 1rem;
     font-weight: 400;
   }
