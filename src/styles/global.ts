@@ -17,7 +17,7 @@ body{
     -webkit-font-smoothing: antialiased
 }
     body, input, button, text{
-        font-family: ${({ theme }) => theme.fonts.regular};
+        font-family: 'Roboto'; 
         font-weight: 400;
        
     }
