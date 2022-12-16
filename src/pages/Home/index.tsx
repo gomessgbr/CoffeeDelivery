@@ -8,6 +8,13 @@ export function Home() {
     <HomeContainer>
       <HeaderHome />
       <HomeTitle>Nossos Cafés</HomeTitle>
+
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
       <CoffeeCard />
     </HomeContainer>
   )
