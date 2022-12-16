@@ -1,9 +1,22 @@
-import { CoffeeCardContainer } from './styles'
+import {
+  CoffeeCardContainer,
+  CoffeeCardDescription,
+  CoffeCardFooter,
+  CoffeeContent,
+} from './styles'
 
 export function CoffeeCard() {
   return (
     <CoffeeCardContainer>
-      <div>CoffeeCard</div>
+      <CoffeeContent>
+        <CoffeeCardDescription>
+          <img src="/CoffeesImg/tradicional.png" alt="" />
+          <span>Tradicional</span>
+          <span>Expresso tradicional</span>
+          <span>O tradicional café feito com água quente e grãos moídos</span>
+        </CoffeeCardDescription>
+        <CoffeCardFooter></CoffeCardFooter>
+      </CoffeeContent>
     </CoffeeCardContainer>
   )
 }
