@@ -8,15 +8,13 @@ import {
 export function CoffeeCard() {
   return (
     <CoffeeCardContainer>
-      <CoffeeContent>
-        <CoffeeCardDescription>
-          <img src="/CoffeesImg/tradicional.png" alt="" />
-          <span>Tradicional</span>
-          <span>Expresso tradicional</span>
-          <span>O tradicional café feito com água quente e grãos moídos</span>
-        </CoffeeCardDescription>
-        <CoffeCardFooter></CoffeCardFooter>
-      </CoffeeContent>
+      <CoffeeCardDescription>
+        <img src="/CoffeesImg/tradicional.png" alt="" />
+        <span>Tradicional</span>
+        <span>Expresso tradicional</span>
+        <span>O tradicional café feito com água quente e grãos moídos</span>
+      </CoffeeCardDescription>
+      <CoffeCardFooter></CoffeCardFooter>
     </CoffeeCardContainer>
   )
 }
