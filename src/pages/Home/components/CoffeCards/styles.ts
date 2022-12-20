@@ -17,6 +17,23 @@ export const CoffeeCardContainer = styled.div`
     height: 7.5rem;
     margin-top: -1.25rem;
   }
+
+  .CoffeeName {
+    font-family: 'Baloo 2';
+    font-size: 1.2rem;
+    color: ${({ theme }) => theme.colors['gray-700']};
+    line-height: 130%;
+    font-weight: 700;
+  }
+
+  .CoffeeDescription {
+    font-family: 'Roboto';
+    font-size: 1rem;
+    color: ${({ theme }) => theme.colors['gray-500']};
+    line-height: 130%;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
 `
 
 export const CoffeeCardDescription = styled.div`
