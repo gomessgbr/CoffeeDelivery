@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import backgroundIntroImg from '../../../../assets/backgroundIntroPNG.png'
+
 export const HeaderHomeContainer = styled.div`
   display: flex;
   height: 36rem;
