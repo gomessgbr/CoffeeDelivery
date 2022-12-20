@@ -13,7 +13,7 @@ export interface CoffeeInt {
   id: string
   tags: string[]
   name: string
-  price: string
+  price: number
   description: string
   photo: string
 }
@@ -35,19 +35,17 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
   return (
     <CoffeeCardContainer>
       <CoffeeCardDescription>
-        <img src="/CoffeesImg/tradicional.png" alt="" />
+        <img src={`/CoffeesImg/${coffee.photo}`} alt="" />
         <Tags>
           <span>Tradicional</span>
         </Tags>
-        <span className="CoffeeName">Expresso tradicional</span>
-        <span className="CoffeeDescription">
-          O tradicional café feito com água quente e grãos moídos
-        </span>
+        <span className="CoffeeName">{coffee.name}</span>
+        <span className="CoffeeDescription">{coffee.description}</span>
       </CoffeeCardDescription>
 
       <CoffeCardFooter>
         <div>
-          <p>R$</p> <h1>9,90</h1>
+          <p>R$</p> <h1>{coffee.price}</h1>
         </div>
 
         <AmountWrapper>
