@@ -35,17 +35,6 @@ export const CoffeeCardContainer = styled.div`
   }
 `
 
-export const CoffeeCardDescription = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  span {
-    text-align: center;
-    margin: 0.5rem;
-  }
-`
-
 export const Tags = styled.div`
   width: 100%;
   display: flex;
@@ -58,7 +47,7 @@ export const Tags = styled.div`
   span {
     background: ${({ theme }) => theme.colors['yellow-100']};
     color: ${({ theme }) => theme.colors['yellow-300']};
-    font-size: 'Roboto';
+    font-size: 0.625rem;
     text-transform: uppercase;
     padding: 0.25rem 0.5rem;
     border-radius: 999px;
