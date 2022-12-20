@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { Amount } from '../../../../components/Amount'
 import {
   CoffeeCardContainer,
-  CoffeeCardDescription,
   CoffeCardFooter,
   Tags,
   AmountWrapper,
@@ -34,14 +33,15 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
 
   return (
     <CoffeeCardContainer>
-      <CoffeeCardDescription>
-        <img src={`/CoffeesImg/${coffee.photo}`} alt="" />
-        <Tags>
-          <span>Tradicional</span>
-        </Tags>
-        <span className="CoffeeName">{coffee.name}</span>
-        <span className="CoffeeDescription">{coffee.description}</span>
-      </CoffeeCardDescription>
+      <img src={`/CoffeesImg/${coffee.photo}`} alt="" />
+      <Tags>
+        {coffee.tags.map((tag) => {
+          return <span key={`${coffee.id}${tag}`}>{tag}</span>
+        })}
+        <span>Tradicional</span>
+      </Tags>
+      <span className="CoffeeName">{coffee.name}</span>
+      <span className="CoffeeDescription">{coffee.description}</span>
 
       <CoffeCardFooter>
         <div>
