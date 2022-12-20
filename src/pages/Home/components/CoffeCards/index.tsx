@@ -1,6 +1,7 @@
 import { ShoppingCart } from 'phosphor-react'
 import { useState } from 'react'
 import { Amount } from '../../../../components/Amount'
+import { formatMoney } from '../../../../utils/formatMoney'
 import {
   CoffeeCardContainer,
   CoffeCardFooter,
@@ -30,7 +31,7 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
   function handleDecrease() {
     setAmount((prevState) => prevState - 1)
   }
-
+  const formattedPrice = formatMoney(coffee.price)
   return (
     <CoffeeCardContainer>
       <img src={`/CoffeesImg/${coffee.photo}`} alt="" />
@@ -45,7 +46,7 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
 
       <CoffeCardFooter>
         <div>
-          <p>R$</p> <h1>{coffee.price}</h1>
+          <p>R$</p> <h1>{formattedPrice}</h1>
         </div>
 
         <AmountWrapper>
