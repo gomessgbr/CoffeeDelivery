@@ -22,7 +22,7 @@ export const coffees = [
     tags: ['Tradicional'],
     name: 'Expresso Cremoso',
     description: 'Café expresso tradicional com espuma cremosa',
-    photo: '',
+    photo: 'cremoso.png',
     price: 9.9,
   },
   {
@@ -114,7 +114,7 @@ export const coffees = [
     tags: ['Especial', 'Alcoólico'],
     name: 'Irlandês',
     description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
-    photo: '',
+    photo: 'irlandes.png',
     price: 9.9,
   },
 ]
