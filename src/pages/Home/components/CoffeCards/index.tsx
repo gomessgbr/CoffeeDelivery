@@ -25,8 +25,10 @@ export function CoffeeCard() {
         <Tags>
           <span>Tradicional</span>
         </Tags>
-        <span>Expresso tradicional</span>
-        <span>O tradicional café feito com água quente e grãos moídos</span>
+        <span className="CoffeeName">Expresso tradicional</span>
+        <span className="CoffeeDescription">
+          O tradicional café feito com água quente e grãos moídos
+        </span>
       </CoffeeCardDescription>
       <CoffeCardFooter>
         <p>R$</p> <h1>9,90</h1>
