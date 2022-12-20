@@ -24,7 +24,14 @@ interface CoffeeProps {
 
 export function CoffeeCard({ coffee }: CoffeeProps) {
   const [amount, setAmount] = useState(1)
-  
+
+  function handleIncrease() {
+    setAmount((prevState) => prevState + 1)
+  }
+  function handleDecrease() {
+    setAmount((prevState) => prevState - 1)
+  }
+
   return (
     <CoffeeCardContainer>
       <CoffeeCardDescription>
@@ -44,7 +51,11 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
         </div>
 
         <AmountWrapper>
-          <Amount amount={10} onDecrease={() => {}} onIncrease={() => {}} />
+          <Amount
+            amount={amount}
+            onDecrease={handleDecrease}
+            onIncrease={handleIncrease}
+          />
 
           <button>
             <ShoppingCart size={20} weight="fill" />
