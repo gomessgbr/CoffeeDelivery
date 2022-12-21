@@ -14,7 +14,7 @@ export function Header() {
           <MapPin size={20} color="#8047F8" weight="fill" />
           São Paulo, SP
         </LocaleContainer>
-        <NavLink to="Checkout" title="carrinho">
+        <NavLink to="Cart" title="carrinho">
           <ShoppingCart size={24} color="#C47F17" weight="fill" />
         </NavLink>
       </HeaderNav>
