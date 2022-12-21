@@ -9,8 +9,12 @@ import {
 } from './styles'
 
 export function CartForm() {
-  const { register } = useForm()
+  const { register, handleSubmit } = useForm()
   const { colors } = useTheme()
+
+  function confirmCart(data: any) {
+    console.log('data', data)
+  }
   return (
     <CartFormContainer>
       <CartFormTitle>Complete seu pedido</CartFormTitle>
@@ -19,7 +23,7 @@ export function CartForm() {
           <MapPinLine size={24} color={colors['purple-200']} />
           <span>Endereço de Entrega</span>
           <span>Informe o endereço onde deseja receber seu pedido</span>
-          <form>
+          <form onSubmit={handleSubmit(confirmCart)}>
             <input type="text" placeholder="CEP" {...register('CEP')} />
             <input type="text" placeholder="Rua" {...register('street')} />
             <input type="text" placeholder="Número" {...register('number')} />
@@ -35,6 +39,7 @@ export function CartForm() {
             />
             <input type="text" placeholder="cidade" {...register('city')} />
             <input type="text" placeholder="UF" {...register('UF')} />
+            <input type="submit" value="enviar" />
           </form>
         </FormAreaTitle>
       </FormAreaContainer>
