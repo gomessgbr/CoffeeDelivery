@@ -8,7 +8,7 @@ export interface CartItem extends CoffeeInt {
 
 interface CartContextType {
   cartItems: CartItem[]
-  cartQuantity: number
+  cartAmount: number
   cartItemsTotal: number
   addCoffeeToCart: (coffee: CartItem) => void
   changeCartItem: (cartItemId: string, type: 'increase' | 'decrease') => void
@@ -34,7 +34,7 @@ export function CardContextProvider({ children }: CartContextProviderProps) {
     }
   })
 
-  const cartQuantity = cartItems.length
+  const cartAmount = cartItems.length
 
   const cartItemsTotal = cartItems.reduce((total, cartItem) => {
     return total + cartItem.price * cartItem.amount
@@ -98,7 +98,7 @@ export function CardContextProvider({ children }: CartContextProviderProps) {
     <CartContext.Provider
       value={{
         cartItems,
-        cartQuantity,
+        cartAmount,
         addCoffeeToCart,
         changeCartItem,
         removeCartItem,
