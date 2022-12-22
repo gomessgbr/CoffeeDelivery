@@ -1,17 +1,15 @@
 import styled from 'styled-components'
 
-export const OurCoffeesContainer = styled.section`
+export const OurCoffeesContainer = styled.div`
   width: 100%;
+  display: flex;
   margin-top: 2rem;
 `
 
 export const CoffeeList = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  column-gap: 2rem;
-  row-gap: 2.5rem;
-  margin-top: 3.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 `
 
 export const HomeTitle = styled.p`
