@@ -3,7 +3,9 @@ import styled from 'styled-components'
 export const CoffeeCardContainer = styled.div`
   display: flex;
   background: ${({ theme }) => theme.colors['gray-100']};
-  width: 100%;
+  height: 19.375rem;
+  width: 16rem;
+
   border-radius: 6px 36px 6px 36px;
   flex-direction: column;
   justify-content: center;
@@ -11,9 +13,8 @@ export const CoffeeCardContainer = styled.div`
   margin: 0 2rem 2.5rem 0;
   padding: 1.25rem;
   padding-top: 0;
+
   img {
-    width: 7.5rem;
-    height: 7.5rem;
     margin-top: -1.25rem;
   }
 
@@ -56,22 +57,36 @@ export const Tags = styled.div`
 `
 
 export const CoffeCardFooter = styled.div`
-  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  > div {
+  width: 15rem;
+  justify-content: center;
+
+  p {
+    font-size: 0.875rem;
+    color: ${({ theme }) => theme.colors['gray-800']};
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    span {
+      font-family: 'baloo 2', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-left: 0.3rem;
+    }
+  }
+  div {
     display: flex;
     align-items: center;
-    gap: 3px;
-    p {
+    gap: 2px;
+
+    /* p {
       line-height: 0.75rem;
-    }
+    } */
   }
 `
 
 export const AmountWrapper = styled.div`
-  width: 7.5rem;
+  width: 7.375rem;
+  background-color: bisque;
   > button {
     width: 2.375rem;
     height: 2.375rem;
