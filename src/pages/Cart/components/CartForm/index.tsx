@@ -6,6 +6,7 @@ import {
   CartFormTitle,
   FormAreaContainer,
   FormAreaTitle,
+  FormArea,
 } from './styles'
 
 export function CartForm() {
@@ -20,28 +21,57 @@ export function CartForm() {
       <CartFormTitle>Complete seu pedido</CartFormTitle>
       <FormAreaContainer>
         <FormAreaTitle>
-          <MapPinLine size={24} color={colors['purple-200']} />
+          <MapPinLine size={22} color={colors['purple-200']} />
           <span>Endereço de Entrega</span>
           <span>Informe o endereço onde deseja receber seu pedido</span>
-          <form onSubmit={handleSubmit(confirmCart)}>
-            <input type="text" placeholder="CEP" {...register('CEP')} />
-            <input type="text" placeholder="Rua" {...register('street')} />
-            <input type="text" placeholder="Número" {...register('number')} />
+        </FormAreaTitle>
+        <form onSubmit={handleSubmit(confirmCart)}>
+          <FormArea>
             <input
               type="text"
-              placeholder="Complemento"
-              {...register('complemento')}
+              className="cep"
+              placeholder="CEP"
+              {...register('CEP')}
             />
             <input
               type="text"
+              className="street"
+              placeholder="Rua"
+              {...register('street')}
+            />
+            <input
+              type="text"
+              className="number"
+              placeholder="Número"
+              {...register('number')}
+            />
+            <input
+              type="text"
+              className="complement"
+              placeholder="Complemento"
+              {...register('complement')}
+            />
+            <input
+              type="text"
+              className="neighborhood"
               placeholder="Bairro"
               {...register('neighborhood')}
             />
-            <input type="text" placeholder="cidade" {...register('city')} />
-            <input type="text" placeholder="UF" {...register('UF')} />
+            <input
+              type="text"
+              className="city"
+              placeholder="cidade"
+              {...register('city')}
+            />
+            <input
+              type="text"
+              className="uf"
+              placeholder="UF"
+              {...register('uf')}
+            />
             <input type="submit" value="enviar" />
-          </form>
-        </FormAreaTitle>
+          </FormArea>
+        </form>
       </FormAreaContainer>
     </CartFormContainer>
   )
