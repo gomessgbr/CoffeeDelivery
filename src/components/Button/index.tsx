@@ -1,7 +1,5 @@
+import { ButtonContainer } from './styles'
+
 export function Button() {
-  return (
-    <div>
-      <div>Button Component</div>
-    </div>
-  )
+  return <ButtonContainer></ButtonContainer>
 }
