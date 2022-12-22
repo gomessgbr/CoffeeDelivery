@@ -1,6 +1,6 @@
 import { ShoppingCart } from 'phosphor-react'
 import { useState } from 'react'
-import { Amount } from '../../../../components/Amount'
+import { AmountInput } from '../../../../components/AmountInput'
 import { useCart } from '../../../../hooks/useCart'
 import { formatMoney } from '../../../../utils/formatMoney'
 import {
@@ -61,7 +61,7 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
         </div>
 
         <AmountWrapper>
-          <Amount
+          <AmountInput
             amount={amount}
             onDecrease={handleDecrease}
             onIncrease={handleIncrease}
