@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid'
 
 export const coffees = [
   {
-    id: uuidv4(),
+    id: 1,
     tags: ['Tradicional'],
     name: 'Expresso tradicional',
     description: 'O tradicional café feito com água quente e grãos moídos',
@@ -10,7 +10,7 @@ export const coffees = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: 2,
     tags: ['Tradicional'],
     name: 'Expresso Americano',
     description: 'Expresso diluído, menos intenso que o tradicional',
@@ -18,7 +18,7 @@ export const coffees = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: 3,
     tags: ['Tradicional'],
     name: 'Expresso Cremoso',
     description: 'Café expresso tradicional com espuma cremosa',
@@ -26,7 +26,7 @@ export const coffees = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: 4,
     tags: ['Tradicional', 'Gelado'],
     name: 'Expresso Gelado',
     description: 'Bebida preparada com café expresso e cubos de gelo',
@@ -34,7 +34,7 @@ export const coffees = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: 5,
     tags: ['Tradicional', 'Com Leite'],
     name: 'Café com Leite',
     description: 'Meio a meio de expresso tradicional com leite vaporizado',
@@ -42,7 +42,7 @@ export const coffees = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: 6,
     tags: ['Tradicional', 'Com Leite'],
     name: 'Latte',
     description:
@@ -51,7 +51,7 @@ export const coffees = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: 7,
     tags: ['Tradicional', 'Com Leite'],
     name: 'Capuccino',
     description:
@@ -60,7 +60,7 @@ export const coffees = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: 8,
     tags: ['Tradicional', 'Com Leite'],
     name: 'Macchiato',
     description:
@@ -69,7 +69,7 @@ export const coffees = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: 9,
     tags: ['Tradicional', 'Com Leite'],
     name: 'Mocaccino',
     description: 'Café expresso com calda de chocolate, pouco leite e espuma',
@@ -77,7 +77,7 @@ export const coffees = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: 10,
     tags: ['Tradicional', 'Com Leite'],
     name: 'Chocolate Quente',
     description: 'Bebida feita com chocolate dissolvido no leite quente e café',
@@ -85,7 +85,7 @@ export const coffees = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: 11,
     tags: ['Especial', 'Alcoólico', 'Gelado'],
     name: 'Cubano',
     description:
@@ -94,7 +94,7 @@ export const coffees = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: 12,
     tags: ['Especial'],
     name: 'Havaiano',
     description: 'Bebida adocicada preparada com café e leite de coco',
@@ -102,7 +102,7 @@ export const coffees = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: 13,
     tags: ['Especial'],
     name: 'Árabe',
     description: 'Bebida preparada com grãos de café árabe e especiarias',
@@ -110,7 +110,7 @@ export const coffees = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: 14,
     tags: ['Especial', 'Alcoólico'],
     name: 'Irlandês',
     description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
