@@ -46,6 +46,7 @@ export const HomeHeaderSubTitle = styled.div`
   height: 5.25rem;
   justify-content: space-around;
   align-items: baseline;
+  gap: 1rem;
 
   span {
     display: flex;
