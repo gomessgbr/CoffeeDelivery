@@ -11,7 +11,7 @@ import {
 } from './styles'
 
 export interface CoffeeInt {
-  id: string
+  id: number
   tags: string[]
   name: string
   price: number
@@ -50,15 +50,14 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
         {coffee.tags.map((tag) => {
           return <span key={`${coffee.id}${tag}`}>{tag}</span>
         })}
-        <span>Tradicional</span>
       </Tags>
       <span className="CoffeeName">{coffee.name}</span>
       <span className="CoffeeDescription">{coffee.description}</span>
 
       <CoffeCardFooter>
-        <div>
-          <p>R$</p> <h1>{formattedPrice}</h1>
-        </div>
+        <p>
+          R$<span>{formattedPrice}</span>
+        </p>
 
         <AmountWrapper>
           <AmountInput
