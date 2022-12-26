@@ -1,12 +1,9 @@
 import styled from 'styled-components'
 
 export const CartContainer = styled.div`
-  margin-top: 2.5rem;
+  height: 90vh;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-
-  @media (max-width: 1000px) {
-    flex-direction: column;
-  }
+  flex-direction: row;
+  background-color: aqua;
 `
