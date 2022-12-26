@@ -10,7 +10,7 @@ interface CartContextType {
   cartItems: CartItem[]
   cartAmount: number
   cartItemsTotal: number
-  addCoffeeToCart: (coffee: CartItem) => void
+  addToCart: (coffee: CartItem) => void
   changeCartItem: (cartItemId: number, type: 'increase' | 'decrease') => void
   removeCartItem: (cartItemId: number) => void
   cleanCart: () => void
@@ -40,7 +40,7 @@ export function CardContextProvider({ children }: CartContextProviderProps) {
     return total + cartItem.price * cartItem.amount
   }, 0)
 
-  function addCoffeeToCart(coffee: CartItem) {
+  function addToCart(coffee: CartItem) {
     const coffeeAlreadyExistsInCart = cartItems.findIndex(
       (cartItem) => cartItem.id === coffee.id,
     )
@@ -99,7 +99,7 @@ export function CardContextProvider({ children }: CartContextProviderProps) {
       value={{
         cartItems,
         cartAmount,
-        addCoffeeToCart,
+        addToCart,
         changeCartItem,
         removeCartItem,
         cartItemsTotal,
