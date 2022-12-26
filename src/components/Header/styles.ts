@@ -34,3 +34,19 @@ export const LocaleContainer = styled.div`
   gap: 0.25rem;
   border-radius: 6px;
 `
+
+export const CountOfItensonCart = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.75rem;
+  font-weight: bold;
+
+  width: 1.25rem;
+  height: 1.25rem;
+
+  background: ${({ theme }) => theme.colors['yellow-300']};
+  color: ${({ theme }) => theme.colors.white};
+  border-radius: 50%;
+`
