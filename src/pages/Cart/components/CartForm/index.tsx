@@ -19,7 +19,7 @@ export function CartForm() {
   const [paymentsMethods, setPaymentsMethods] =
     useState<PaymentsMethods>('Dinheiro')
 
-  const { register, handleSubmit, setValue } = useForm()
+  const { register, setValue } = useForm()
   const { colors } = useTheme()
 
   function handlePaymentsMethods(paymentmethodInputValue: PaymentsMethods) {
@@ -27,9 +27,6 @@ export function CartForm() {
     setPaymentsMethods(paymentmethodInputValue)
   }
 
-  function confirmCart(data: any) {
-    console.log('data', data)
-  }
   return (
     <CartFormContainer>
       <h1
@@ -51,52 +48,51 @@ export function CartForm() {
 
           <span>Informe o endereço onde deseja receber seu pedido</span>
         </div>
-        <form onSubmit={handleSubmit(confirmCart)}>
-          <div>
-            <input
-              type="text"
-              className="cep"
-              placeholder="CEP"
-              {...register('cep')}
-            />
-            <input
-              type="text"
-              className="street"
-              placeholder="Rua"
-              {...register('street')}
-            />
-            <input
-              type="text"
-              className="number"
-              placeholder="Número"
-              {...register('number')}
-            />
-            <input
-              type="text"
-              className="complement"
-              placeholder="Complemento"
-              {...register('complement')}
-            />
-            <input
-              type="text"
-              className="neighborhood"
-              placeholder="Bairro"
-              {...register('neighborhood')}
-            />
-            <input
-              type="text"
-              className="city"
-              placeholder="cidade"
-              {...register('city')}
-            />
-            <input
-              type="text"
-              className="uf"
-              placeholder="UF"
-              {...register('uf')}
-            />
-          </div>
-        </form>
+
+        <div>
+          <input
+            type="text"
+            className="cep"
+            placeholder="CEP"
+            {...register('cep')}
+          />
+          <input
+            type="text"
+            className="street"
+            placeholder="Rua"
+            {...register('street')}
+          />
+          <input
+            type="text"
+            className="number"
+            placeholder="Número"
+            {...register('number')}
+          />
+          <input
+            type="text"
+            className="complement"
+            placeholder="Complemento"
+            {...register('complement')}
+          />
+          <input
+            type="text"
+            className="neighborhood"
+            placeholder="Bairro"
+            {...register('neighborhood')}
+          />
+          <input
+            type="text"
+            className="city"
+            placeholder="cidade"
+            {...register('city')}
+          />
+          <input
+            type="text"
+            className="uf"
+            placeholder="UF"
+            {...register('uf')}
+          />
+        </div>
       </div>
       <div>
         <div>
