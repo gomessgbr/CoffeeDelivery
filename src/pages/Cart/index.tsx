@@ -1,5 +1,5 @@
 import { CartForm } from './components/CartForm'
-import { ShoppingCart } from './components/ShoppingCart'
+import { ConfirmCart } from './components/ConfirmCart'
 
 import { CartContainer } from './styles'
 
@@ -7,8 +7,7 @@ export function Cart() {
   return (
     <CartContainer>
       <CartForm />
-
-      <ShoppingCart />
+      <ConfirmCart />
     </CartContainer>
   )
 }
