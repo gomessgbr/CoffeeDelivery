@@ -15,6 +15,6 @@ export const HomeContainer = styled.div`
 export const CoffeesContent = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 10rem 0 10rem 10rem;
+  margin: 3.375rem 0 10rem 10rem;
   gap: 2rem;
 `
