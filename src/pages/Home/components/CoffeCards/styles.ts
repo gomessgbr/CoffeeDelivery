@@ -57,36 +57,22 @@ export const Tags = styled.div`
 `
 
 export const CoffeCardFooter = styled.div`
-  display: flex;
   width: 15rem;
+  display: flex;
   justify-content: center;
 
   p {
     font-size: 0.875rem;
+
     color: ${({ theme }) => theme.colors['gray-800']};
-    margin-left: 1.5rem;
-    margin-right: 1rem;
     span {
       font-family: 'baloo 2', sans-serif;
       font-size: 1.5rem;
       font-weight: 800;
-      margin-left: 0.3rem;
+      margin-right: 1.43rem;
     }
   }
-  div {
-    display: flex;
-    align-items: center;
-    gap: 2px;
 
-    /* p {
-      line-height: 0.75rem;
-    } */
-  }
-`
-
-export const AmountWrapper = styled.div`
-  width: 7.375rem;
-  background-color: bisque;
   > button {
     width: 2.375rem;
     height: 2.375rem;
@@ -98,9 +84,67 @@ export const AmountWrapper = styled.div`
     color: ${({ theme }) => theme.colors['gray-100']};
     border-radius: 6px;
     margin-left: 0.3rem;
-    transition: 0.4s;
+    transition: 0.2s;
     &:hover {
       background: ${({ theme }) => theme.colors['purple-200']};
     }
+  }
+`
+
+export const AmountWrapper = styled.div`
+  width: 7.375rem;
+
+  > button {
+    width: 2.375rem;
+    height: 2.375rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: ${({ theme }) => theme.colors['purple-300']};
+    color: ${({ theme }) => theme.colors['gray-100']};
+    border-radius: 6px;
+    margin-left: 0.3rem;
+    transition: 0.2s;
+    &:hover {
+      background: ${({ theme }) => theme.colors['purple-200']};
+    }
+  }
+`
+
+export const AmountContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.375rem;
+  width: 4.5rem;
+  border-radius: 8px;
+  margin-right: 0.5rem;
+  background: ${({ theme }) => theme.colors['gray-300']};
+
+  p {
+    color: ${({ theme }) => theme.colors['gray-800']};
+  }
+`
+
+export const AmountButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.75rem;
+
+  width: 20px;
+  height: 20px;
+  color: ${({ theme }) => theme.colors['purple-200']};
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  margin: 0.5rem;
+
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    filter: brightness(0.7);
   }
 `
