@@ -43,7 +43,7 @@ export function CartForm() {
               type="text"
               className="cep"
               placeholder="CEP"
-              {...register('CEP')}
+              {...register('cep')}
             />
             <input
               type="text"
