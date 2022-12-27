@@ -8,10 +8,24 @@ import {
 import { useTheme } from 'styled-components'
 import { useForm } from 'react-hook-form'
 import { CartFormContainer } from './styles'
+import { useState } from 'react'
+
+export type PaymentsMethods =
+  | 'Cartão de crédito'
+  | 'Dinheiro'
+  | 'Cartão de Débito'
 
 export function CartForm() {
-  const { register, handleSubmit } = useForm()
+  const [paymentsMethods, setPaymentsMethods] =
+    useState<PaymentsMethods>('Dinheiro')
+
+  const { register, handleSubmit, setValue } = useForm()
   const { colors } = useTheme()
+
+  function handlePaymentsMethods(paymentmethodInputValue: PaymentsMethods) {
+    setValue('paymentsMethods', paymentmethodInputValue)
+    setPaymentsMethods(paymentmethodInputValue)
+  }
 
   function confirmCart(data: any) {
     console.log('data', data)
@@ -91,17 +105,34 @@ export function CartForm() {
           <span>O pagamento é feito na entrega</span>
           <div>
             <CreditCard size={16} />
-            <input type="submit" value="CARTÃO DE CRÉDITO" />
+            <button
+              type="submit"
+              value="CARTÃO DE CRÉDITO"
+              onClick={() => handlePaymentsMethods('Cartão de crédito')}
+            />
           </div>
           <div>
             <Bank size={16} />
-            <input type="submit" value="CARTÃO DE DÉBITO" />
+            <button
+              type="submit"
+              value="CARTÃO DE DÉBITO"
+              onClick={() => handlePaymentsMethods('Cartão de Débito')}
+            />
           </div>
           <div>
             <Money size={16} />
-            <input type="submit" value="DINHEIRO" />
+            <button
+              type="submit"
+              value="DINHEIRO"
+              onClick={() => handlePaymentsMethods('Dinheiro')}
+            />
           </div>
         </div>
+        <input
+          type="hidden"
+          value={paymentsMethods}
+          {...register('paymentsMethods')}
+        />
       </div>
     </CartFormContainer>
   )
