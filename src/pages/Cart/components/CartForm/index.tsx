@@ -1,13 +1,13 @@
-import { MapPinLine } from 'phosphor-react'
+import {
+  Bank,
+  CreditCard,
+  CurrencyDollar,
+  MapPinLine,
+  Money,
+} from 'phosphor-react'
 import { useTheme } from 'styled-components'
 import { useForm } from 'react-hook-form'
-import {
-  CartFormContainer,
-  CartFormTitle,
-  FormAreaContainer,
-  FormAreaTitle,
-  FormArea,
-} from './styles'
+import { CartFormContainer } from './styles'
 
 export function CartForm() {
   const { register, handleSubmit } = useForm()
@@ -18,15 +18,27 @@ export function CartForm() {
   }
   return (
     <CartFormContainer>
-      <CartFormTitle>Complete seu pedido</CartFormTitle>
-      <FormAreaContainer>
-        <FormAreaTitle>
-          <MapPinLine size={22} color={colors['purple-200']} />
-          <span>Endereço de Entrega</span>
+      <h1
+        style={{
+          fontFamily: 'Baloo 2',
+          fontWeight: '700',
+          fontSize: '1.125rem',
+          lineHeight: '130%',
+        }}
+      >
+        Complete seu pedido
+      </h1>
+      <div>
+        <div>
+          <div>
+            <MapPinLine size={22} color={colors['purple-200']} />
+            <span>Endereço de Entrega</span>
+          </div>
+
           <span>Informe o endereço onde deseja receber seu pedido</span>
-        </FormAreaTitle>
+        </div>
         <form onSubmit={handleSubmit(confirmCart)}>
-          <FormArea>
+          <div>
             <input
               type="text"
               className="cep"
@@ -69,10 +81,28 @@ export function CartForm() {
               placeholder="UF"
               {...register('uf')}
             />
-            <input type="submit" value="enviar" />
-          </FormArea>
+          </div>
         </form>
-      </FormAreaContainer>
+      </div>
+      <div>
+        <div>
+          <CurrencyDollar size={22} color={colors['purple-200']} />
+          <h1>Pagamento</h1>
+          <span>O pagamento é feito na entrega</span>
+          <div>
+            <CreditCard size={16} />
+            <input type="submit" value="CARTÃO DE CRÉDITO" />
+          </div>
+          <div>
+            <Bank size={16} />
+            <input type="submit" value="CARTÃO DE DÉBITO" />
+          </div>
+          <div>
+            <Money size={16} />
+            <input type="submit" value="DINHEIRO" />
+          </div>
+        </div>
+      </div>
     </CartFormContainer>
   )
 }
