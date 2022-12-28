@@ -7,7 +7,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 import { CartContainer } from './styles'
 import { useForm, FormProvider } from 'react-hook-form'
-import { useCart } from '../../hooks/useCart'
 
 const confirmOrderSchema = zod.object({
   cep: zod.string().min(1, 'Informe o cep'),
@@ -28,22 +27,25 @@ export function Cart() {
     resolver: zodResolver(confirmOrderSchema),
   })
 
-  const { handleSubmit } = confirmForm
+  const { handleSubmit, reset } = confirmForm
   const navigate = useNavigate()
-  const { cleanCart } = useCart()
 
-  function handleSubmitForm() {
-    navigate('/checkout')
+  function handleConfirmOrder(data: ConfirmValidateData) {
+    console.log('teste', data)
+    navigate('/checkout', {
+      state: data,
+    })
 
-    cleanCart()
+    reset()
   }
 
   return (
     <FormProvider {...confirmForm}>
       <CartContainer>
-        <CartForm />
-        <form action="" onSubmit={handleSubmit(handleSubmitForm)}></form>
-        <ConfirmCart />
+        <form onSubmit={handleSubmit(handleConfirmOrder)}>
+          <CartForm />
+          <ConfirmCart />
+        </form>
       </CartContainer>
     </FormProvider>
   )
