@@ -29,6 +29,7 @@ export function Cart() {
 
   const { handleSubmit, reset } = confirmForm
   const navigate = useNavigate()
+  console.log(navigate)
 
   function handleConfirmOrder(data: ConfirmValidateData) {
     console.log('teste', data)
