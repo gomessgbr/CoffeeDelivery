@@ -6,7 +6,7 @@ import {
   Money,
 } from 'phosphor-react'
 import { useTheme } from 'styled-components'
-import { useForm } from 'react-hook-form'
+import { useFormContext } from 'react-hook-form'
 import { CartFormContainer } from './styles'
 import { useState } from 'react'
 
@@ -19,8 +19,10 @@ export function CartForm() {
   const [paymentsMethods, setPaymentsMethods] =
     useState<PaymentsMethods>('Dinheiro')
 
-  const { register, setValue } = useForm()
+  const { register, setValue } = useFormContext()
   const { colors } = useTheme()
+
+  console.log(colors)
 
   function handlePaymentsMethods(paymentmethodInputValue: PaymentsMethods) {
     setValue('paymentsMethods', paymentmethodInputValue)
