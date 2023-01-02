@@ -22,8 +22,6 @@ export function CartForm() {
   const { register, setValue } = useFormContext()
   const { colors } = useTheme()
 
-  console.log(colors)
-
   function handlePaymentsMethods(paymentmethodInputValue: PaymentsMethods) {
     setValue('paymentsMethods', paymentmethodInputValue)
     setPaymentsMethods(paymentmethodInputValue)
