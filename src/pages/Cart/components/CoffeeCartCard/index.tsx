@@ -40,7 +40,6 @@ export function CoffeeCartCard({
   function handleRemoveCoffe() {
     removeCartItem(id)
   }
-  console.log(photo)
 
   return (
     <CoffeeCartCardContainer>
