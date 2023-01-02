@@ -23,14 +23,12 @@ export function CoffeeCartCard({
 
   function handleIncreaseAmount() {
     changeCartItem(id, 'increase')
-
     setTotalValue(totalValue + price)
   }
 
   function handleDeacreaseAmount() {
     if (amount > 1) {
       changeCartItem(id, 'decrease')
-
       setTotalValue(totalValue - price)
     } else if (amount >= 1) {
       alert('Teste')
@@ -53,15 +51,15 @@ export function CoffeeCartCard({
         <p className="coffeTypeText">{name}</p>
         <div className="buttonsWrapper">
           <div>
-            <button onClick={handleDeacreaseAmount}>
+            <button type="button" onClick={handleDeacreaseAmount}>
               <Minus weight="bold" />
             </button>
             <p className="itemsInCart">{amount}</p>
-            <button onClick={handleIncreaseAmount}>
+            <button type="button" onClick={handleIncreaseAmount}>
               <Plus weight="bold" />
             </button>
           </div>
-          <button onClick={handleRemoveCoffe}>
+          <button type="button" onClick={handleRemoveCoffe}>
             <Trash size={16} color="#8047F8" />
             REMOVER
           </button>
