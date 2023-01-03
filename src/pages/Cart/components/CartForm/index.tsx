@@ -54,18 +54,22 @@ export function CartForm() {
             type="text"
             className="cep"
             placeholder="CEP"
+            required
             {...register('cep')}
           />
           <input
             type="text"
             className="street"
             placeholder="Rua"
+            required
             {...register('street')}
           />
           <input
-            type="text"
+            type="number"
+            min="1"
             className="number"
             placeholder="Número"
+            required
             {...register('number')}
           />
           <input
@@ -78,18 +82,21 @@ export function CartForm() {
             type="text"
             className="neighborhood"
             placeholder="Bairro"
+            required
             {...register('neighborhood')}
           />
           <input
             type="text"
             className="city"
             placeholder="cidade"
+            required
             {...register('city')}
           />
           <input
             type="text"
             className="uf"
             placeholder="UF"
+            required
             {...register('uf')}
           />
         </div>
@@ -102,26 +109,32 @@ export function CartForm() {
           <div>
             <CreditCard size={16} />
             <button
-              type="submit"
+              type="button"
               value="CARTÃO DE CRÉDITO"
               onClick={() => handlePaymentsMethods('Cartão de crédito')}
-            />
+            >
+              Cartão de crédito
+            </button>
           </div>
           <div>
             <Bank size={16} />
             <button
-              type="submit"
+              type="button"
               value="CARTÃO DE DÉBITO"
               onClick={() => handlePaymentsMethods('Cartão de Débito')}
-            />
+            >
+              Cartão de débito
+            </button>
           </div>
           <div>
             <Money size={16} />
             <button
-              type="submit"
+              type="button"
               value="DINHEIRO"
               onClick={() => handlePaymentsMethods('Dinheiro')}
-            />
+            >
+              Dinheiro
+            </button>
           </div>
         </div>
         <input
