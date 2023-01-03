@@ -1,37 +1,38 @@
-import { CartForm } from './components/CartForm'
-import { ConfirmCart } from './components/ConfirmCart'
 import * as zod from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
 
 import { useNavigate } from 'react-router-dom'
-import { zodResolver } from '@hookform/resolvers/zod'
 
-import { CartContainer } from './styles'
-import { useForm, FormProvider } from 'react-hook-form'
+import {
+  CartContainer,
+  InputContainer,
+  ConfirmOrderContainer,
+  FormArea,
+  CartTitleArea,
+  PaymentMethodArea,
+} from './styles'
 
 const confirmOrderSchema = zod.object({
   cep: zod.string().min(1, 'Informe o cep'),
   street: zod.string().min(7, 'Informe a rua'),
-  number: zod.number().min(1, 'Informe o número do endereço'),
+  number: zod.string().min(1, 'Informe o número do endereço'),
   complement: zod.string(),
   neighborhood: zod.string().min(5, 'Informe o endereço'),
   city: zod.string().min(4, 'Informe a cidade'),
   uf: zod.string().min(2, 'Informe o estado'),
 })
 
-export type ValidateData = zod.infer<typeof confirmOrderSchema>
-
-type ConfirmValidateData = ValidateData
+type inputDataTypes = zod.infer<typeof confirmOrderSchema>
 
 export function Cart() {
-  const confirmForm = useForm<ConfirmValidateData>({
+  const { handleSubmit, reset, formState, register } = useForm<inputDataTypes>({
     resolver: zodResolver(confirmOrderSchema),
   })
 
-  const { handleSubmit, reset } = confirmForm
   const navigate = useNavigate()
-  console.log(navigate)
-  function handleConfirmOrder(data: ConfirmValidateData) {
-    console.log('teste', data)
+
+  function handleConfirmOrder(data: inputDataTypes) {
     navigate('/checkout', {
       state: data,
     })
@@ -40,13 +41,63 @@ export function Cart() {
   }
 
   return (
-    <FormProvider {...confirmForm}>
-      <CartContainer>
-        <form onSubmit={handleSubmit(handleConfirmOrder)}>
-          <CartForm />
-          <ConfirmCart />
-        </form>
-      </CartContainer>
-    </FormProvider>
+    <CartContainer>
+      <InputContainer>
+        <CartTitleArea>Complete seu Pedido</CartTitleArea>
+        <FormArea>
+          <form onSubmit={handleSubmit(handleConfirmOrder)}>
+            <input
+              type="text"
+              className="cep"
+              placeholder="CEP"
+              {...register('cep')}
+            />
+            <input
+              type="text"
+              className="street"
+              placeholder="Rua"
+              {...register('street')}
+            />
+            <input
+              type="number"
+              min="1"
+              className="number"
+              placeholder="Número"
+              {...register('number')}
+            />
+            <input
+              type="text"
+              className="complement"
+              placeholder="Complemento"
+              {...register('complement')}
+            />
+            <input
+              type="text"
+              className="neighborhood"
+              placeholder="Bairro"
+              {...register('neighborhood')}
+            />
+            <input
+              type="text"
+              className="city"
+              placeholder="cidade"
+              {...register('city')}
+            />
+            <input
+              type="text"
+              className="uf"
+              placeholder="UF"
+              {...register('uf')}
+            />
+            <button type="submit">VAI FUNCIONAR MENÓ</button>
+          </form>
+        </FormArea>
+
+        <PaymentMethodArea></PaymentMethodArea>
+      </InputContainer>
+      <ConfirmOrderContainer>
+        <CartTitleArea>Cafés Selecionados</CartTitleArea>
+      </ConfirmOrderContainer>
+    </CartContainer>
   )
 }
