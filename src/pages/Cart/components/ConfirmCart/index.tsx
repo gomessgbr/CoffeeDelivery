@@ -57,12 +57,7 @@ export function ConfirmCart() {
             <h3 className="maxSize">R$ {totalPrice.toFixed(2)}</h3>
           </div>
         </div>
-
-        <button
-          form="checkoutForm"
-          type="submit"
-          style={{ fontFamily: 'Roboto' }}
-        >
+        <button type="submit" style={{ fontFamily: 'Roboto' }}>
           CONFIRMAR PEDIDO
         </button>
       </div>
