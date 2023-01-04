@@ -2,7 +2,12 @@ import { useEffect, useState } from 'react'
 import { useCart } from '../../../../hooks/useCart'
 import { CoffeeCartCard } from '../CoffeeCartCard'
 
-import { ConfirmCartContainer } from './styles'
+import {
+  ConfirmCartContainer,
+  CartArea,
+  TotalArea,
+  ConfirmationButton,
+} from './styles'
 
 export function ConfirmCart() {
   const { cartItems } = useCart()
@@ -21,17 +26,7 @@ export function ConfirmCart() {
 
   return (
     <ConfirmCartContainer>
-      <h1
-        style={{
-          fontFamily: 'Baloo 2',
-          fontWeight: '700',
-          fontSize: '1.125rem',
-          lineHeight: '130%',
-        }}
-      >
-        Cafés selecionados
-      </h1>
-      <div>
+      <CartArea>
         {cartItems.map((card) => {
           return (
             <CoffeeCartCard
@@ -44,7 +39,7 @@ export function ConfirmCart() {
             />
           )
         })}
-        <div>
+        <TotalArea>
           <div className="items">
             <p className="minSize">Total de itens</p>
             <p className="minSize">Entrega</p>
@@ -56,11 +51,11 @@ export function ConfirmCart() {
             <p className="minSize">R$ {deliveryFee}</p>
             <h3 className="maxSize">R$ {totalPrice.toFixed(2)}</h3>
           </div>
-        </div>
-        <button type="submit" style={{ fontFamily: 'Roboto' }}>
+        </TotalArea>
+        <ConfirmationButton type="submit" style={{ fontFamily: 'Roboto' }}>
           CONFIRMAR PEDIDO
-        </button>
-      </div>
+        </ConfirmationButton>
+      </CartArea>
     </ConfirmCartContainer>
   )
 }
