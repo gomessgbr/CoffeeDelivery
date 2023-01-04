@@ -2,6 +2,8 @@ import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
+import { useCart } from '../../hooks/useCart'
+
 import { useNavigate } from 'react-router-dom'
 
 import {
@@ -45,6 +47,7 @@ export type PaymentMethods =
 type inputDataTypes = zod.infer<typeof confirmOrderSchema>
 
 export function Cart() {
+  const { cleanCart } = useCart()
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethods>('Dinheiro')
   const { handleSubmit, reset, register } = useForm<inputDataTypes>({
     resolver: zodResolver(confirmOrderSchema),
@@ -56,7 +59,7 @@ export function Cart() {
     navigate('/checkout', {
       state: { ...data, paymentMethod },
     })
-
+    cleanCart()
     reset()
   }
 
