@@ -34,11 +34,6 @@ export const AddressArea = styled.div`
   background: ${({ theme }) => theme.colors['gray-100']};
 `
 
-// export const PaymentMethodArea = styled.div`
-//   background: ${({ theme }) => theme.colors['gray-100']};
-// `
-// export const ConfirmOrderSection = styled.section``
-
 export const HeaderWrapper = styled.header`
   display: flex;
   margin-bottom: 2rem;
@@ -124,10 +119,6 @@ export const ButtonsContainer = styled.div`
     align-items: center;
   }
 `
-export type PaymentMethods =
-  | 'Cartão de crédito'
-  | 'Cartão de débito'
-  | 'Dinheiro'
 
 interface ButtonProps {
   isSelected?: boolean

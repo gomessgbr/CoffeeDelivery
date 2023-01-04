@@ -13,7 +13,6 @@ import {
   PaymentContainer,
   ButtonsContainer,
   Button,
-  PaymentMethods,
   AddressArea,
   DefaultInput,
 } from './styles'
@@ -38,6 +37,11 @@ const confirmOrderSchema = zod.object({
   uf: zod.string().min(2, 'Informe o estado'),
 })
 
+export type PaymentMethods =
+  | 'Cartão de crédito'
+  | 'Cartão de débito'
+  | 'Dinheiro'
+
 type inputDataTypes = zod.infer<typeof confirmOrderSchema>
 
 export function Cart() {
@@ -50,7 +54,7 @@ export function Cart() {
 
   function handleConfirmOrder(data: inputDataTypes) {
     navigate('/checkout', {
-      state: data,
+      state: { ...data, paymentMethod },
     })
 
     reset()
