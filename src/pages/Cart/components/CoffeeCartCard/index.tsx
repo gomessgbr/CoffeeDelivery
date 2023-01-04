@@ -1,7 +1,14 @@
 import { Minus, Plus, Trash } from 'phosphor-react'
 import { useState } from 'react'
 import { useCart } from '../../../../hooks/useCart'
-import { CoffeeCartCardContainer } from './styles'
+import {
+  CoffeeCartCardContainer,
+  CounterButton,
+  CounterWrapper,
+  MidWrapper,
+  ProductValue,
+  RemoveItemButton,
+} from './styles'
 
 interface CartItemProps {
   id: number
@@ -47,28 +54,28 @@ export function CoffeeCartCard({
         alt="Coffee image"
       />
 
-      <div>
+      <MidWrapper>
         <p className="coffeTypeText">{name}</p>
         <div className="buttonsWrapper">
-          <div>
-            <button type="button" onClick={handleDeacreaseAmount}>
+          <CounterWrapper>
+            <CounterButton type="button" onClick={handleDeacreaseAmount}>
               <Minus weight="bold" />
-            </button>
+            </CounterButton>
             <p className="itemsInCart">{amount}</p>
-            <button type="button" onClick={handleIncreaseAmount}>
+            <CounterButton type="button" onClick={handleIncreaseAmount}>
               <Plus weight="bold" />
-            </button>
-          </div>
-          <button type="button" onClick={handleRemoveCoffe}>
+            </CounterButton>
+          </CounterWrapper>
+          <RemoveItemButton type="button" onClick={handleRemoveCoffe}>
             <Trash size={16} color="#8047F8" />
             REMOVER
-          </button>
+          </RemoveItemButton>
         </div>
-      </div>
-      <div>
+      </MidWrapper>
+      <ProductValue>
         <p>R$</p>
         <span>{totalValue.toFixed(2)}</span>
-      </div>
+      </ProductValue>
     </CoffeeCartCardContainer>
   )
 }
