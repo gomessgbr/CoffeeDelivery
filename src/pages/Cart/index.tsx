@@ -5,13 +5,32 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 
 import {
-  CartContainer,
-  InputContainer,
-  ConfirmOrderContainer,
+  // InputContainer,
   FormArea,
+
+  // PaymentMethodArea,
+  // ConfirmOrderSection,
+  CartContainer,
+  CartTitles,
+  HeaderWrapper,
   CartTitleArea,
-  PaymentMethodArea,
+  PaymentContainer,
+  ButtonsContainer,
+  Button,
+  PaymentMethods,
+  AddressArea,
+  DefaultInput,
 } from './styles'
+
+import {
+  Bank,
+  CreditCard,
+  CurrencyDollarSimple,
+  MapPinLine,
+  Money,
+} from 'phosphor-react'
+import { useState } from 'react'
+import { ConfirmCart } from './components/ConfirmCart'
 
 const confirmOrderSchema = zod.object({
   cep: zod.string().min(1, 'Informe o cep'),
@@ -26,7 +45,8 @@ const confirmOrderSchema = zod.object({
 type inputDataTypes = zod.infer<typeof confirmOrderSchema>
 
 export function Cart() {
-  const { handleSubmit, reset, formState, register } = useForm<inputDataTypes>({
+  const [paymentMethod, setPaymentMethod] = useState<PaymentMethods>('Dinheiro')
+  const { handleSubmit, reset, register } = useForm<inputDataTypes>({
     resolver: zodResolver(confirmOrderSchema),
   })
 
@@ -40,64 +60,117 @@ export function Cart() {
     reset()
   }
 
+  function handlePaymentMethodChange(paymentMethod: PaymentMethods) {
+    setPaymentMethod(paymentMethod)
+  }
+
   return (
     <CartContainer>
-      <InputContainer>
-        <CartTitleArea>Complete seu Pedido</CartTitleArea>
-        <FormArea>
-          <form onSubmit={handleSubmit(handleConfirmOrder)}>
-            <input
-              type="text"
-              className="cep"
+      <CartTitleArea>
+        <CartTitles>Complete seu pedido</CartTitles>
+        <CartTitles>Cafés selecionados</CartTitles>
+      </CartTitleArea>
+      <FormArea onSubmit={handleSubmit(handleConfirmOrder)}>
+        <section>
+          <AddressArea>
+            <HeaderWrapper>
+              <MapPinLine size={22} color="#C47f17" />
+              <div>
+                <h3 className="subtitle">Endereço de Entrega</h3>
+                <p className="description">
+                  Informe o endereço onde deseja receber seu pedido
+                </p>
+              </div>
+            </HeaderWrapper>
+            <DefaultInput
+              style={{ width: '12.5rem' }}
               placeholder="CEP"
+              required
               {...register('cep')}
             />
-            <input
-              type="text"
-              className="street"
+            <DefaultInput
+              style={{ width: '35rem' }}
               placeholder="Rua"
+              required
               {...register('street')}
             />
-            <input
-              type="number"
-              min="1"
-              className="number"
+            <DefaultInput
+              style={{ width: '12.5rem' }}
               placeholder="Número"
+              required
               {...register('number')}
             />
-            <input
-              type="text"
-              className="complement"
-              placeholder="Complemento"
+            <DefaultInput
+              style={{ width: '21.75rem' }}
               {...register('complement')}
+              placeholder="Complemento / Opcional"
             />
-            <input
-              type="text"
-              className="neighborhood"
+            <DefaultInput
+              style={{ width: '12.5rem' }}
               placeholder="Bairro"
+              required
               {...register('neighborhood')}
             />
-            <input
-              type="text"
-              className="city"
-              placeholder="cidade"
+            <DefaultInput
+              style={{ width: '17.25rem' }}
+              placeholder="Cidade"
+              required
               {...register('city')}
             />
-            <input
-              type="text"
-              className="uf"
+            <DefaultInput
+              style={{ width: '3.75rem' }}
               placeholder="UF"
+              required
               {...register('uf')}
             />
-            <button type="submit">VAI FUNCIONAR MENÓ</button>
-          </form>
-        </FormArea>
+          </AddressArea>
 
-        <PaymentMethodArea></PaymentMethodArea>
-      </InputContainer>
-      <ConfirmOrderContainer>
-        <CartTitleArea>Cafés Selecionados</CartTitleArea>
-      </ConfirmOrderContainer>
+          <PaymentContainer>
+            <section className="header">
+              <CurrencyDollarSimple color="#8047F8" size={22} />
+              <div>
+                <h2 className="subtitle">Pagamento</h2>
+                <p className="description">
+                  O pagamento é feito na entrega. Escolha a forma que deseja
+                  pagar
+                </p>
+              </div>
+            </section>
+            <ButtonsContainer>
+              <Button
+                type="button"
+                isSelected={paymentMethod === 'Cartão de crédito'}
+                onClick={() => handlePaymentMethodChange('Cartão de crédito')}
+              >
+                <CreditCard className="iconButton" size={18} color="#8047F8" />
+                CARTÃO DE CRÉDITO
+              </Button>
+
+              <Button
+                type="button"
+                isSelected={paymentMethod === 'Cartão de débito'}
+                onClick={() => handlePaymentMethodChange('Cartão de débito')}
+              >
+                <Bank className="iconButton" size={18} color="#8047F8" />
+                CARTÃO DE DÉBITO
+              </Button>
+
+              <Button
+                type="button"
+                isSelected={paymentMethod === 'Dinheiro'}
+                onClick={() => handlePaymentMethodChange('Dinheiro')}
+              >
+                <div className="money">
+                  <Money className="iconButton" size={18} color="#8047F8" />
+                  DINHEIRO
+                </div>
+              </Button>
+              <input value={paymentMethod} type="hidden" />
+            </ButtonsContainer>
+          </PaymentContainer>
+        </section>
+        <ConfirmCart />
+      </FormArea>
     </CartContainer>
   )
 }
