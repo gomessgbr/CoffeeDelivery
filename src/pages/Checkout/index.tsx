@@ -21,8 +21,8 @@ export function Checkout() {
             <div className="icon">
               <MapPin size={16} weight="fill" color={'#FFFFFF'} />
             </div>
-            <p>
-              Entrega em
+            <p style={{ marginTop: '1rem' }}>
+              Entrega em{' '}
               <strong>
                 {state.street}, {state.number} <br />
               </strong>
