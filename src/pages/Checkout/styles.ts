@@ -29,7 +29,7 @@ export const Main = styled.main`
   height: 16.875rem;
   width: 32.875rem;
 
-  border: 1px solid ${({ theme }) => theme.colors['purple-300']};
+  border: 1px solid ${({ theme }) => theme.colors['purple-200']};
   border-radius: 6px 36px;
   padding: 2rem;
 
@@ -40,7 +40,7 @@ export const Main = styled.main`
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    margin-bottom: 2.812rem;
+    margin-bottom: 2rem;
   }
   .column {
     display: flex;
@@ -51,7 +51,7 @@ export const Main = styled.main`
     width: 2rem;
     height: 2rem;
     padding: 0.5rem;
-    background: ${({ theme }) => theme.colors['purple-300']};
+    background: ${({ theme }) => theme.colors['purple-200']};
     border-radius: 50%;
   }
 
