@@ -42,7 +42,7 @@ Um site de venda de café por delivery.
 3. Rode o projeto `yarn dev` ou `npm run dev`
 ## Screenshots 
 
-! [Imagem do projeto](/public/siteImage.png)
+![Imagem do projeto](/public/siteImage.png)
 
 
 ## [Figma](https://www.figma.com/file/wQSbuVh4DiViCAbL87kR8X/Coffee-Delivery-(Copy)?node-id=0%3A1&t=FBR023xSYTTZITZv-0)
