@@ -3,11 +3,12 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
+  width: 100%;
   max-height: 6.5rem;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 10rem;
-  margin: 0 10rem;
+  margin: 0 10rem 0 10rem;
 `
 
 export const HeaderNav = styled.nav`
