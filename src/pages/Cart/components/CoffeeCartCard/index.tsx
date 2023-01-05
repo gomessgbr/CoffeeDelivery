@@ -38,7 +38,7 @@ export function CoffeeCartCard({
       changeCartItem(id, 'decrease')
       setTotalValue(totalValue - price)
     } else if (amount >= 1) {
-      alert('Teste')
+      removeCartItem(id)
     }
   }
 
