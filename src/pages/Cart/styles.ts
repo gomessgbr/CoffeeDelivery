@@ -50,7 +50,7 @@ export const HeaderWrapper = styled.header`
 `
 
 export const DefaultInput = styled.input`
-  background: #dedede;
+  background: #eeeded;
 
   border: 2px solid ${({ theme }) => theme.colors['gray-300']};
   border-radius: 5px;
@@ -94,6 +94,7 @@ export const PaymentContainer = styled.div`
     font-size: 0.875rem;
     color: ${({ theme }) => theme.colors['gray-600']};
     margin-left: 0.5rem;
+    margin-top: 0.3rem;
   }
 `
 
@@ -105,7 +106,7 @@ export const ButtonsContainer = styled.div`
   max-width: 40rem;
   gap: 0.75rem;
 
-  margin-top: 3.437rem;
+  margin-top: 2rem;
 
   .iconButton {
     margin-right: 0.75rem;
