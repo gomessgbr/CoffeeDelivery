@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const CartContainer = styled.div`
-  margin-right: 5rem;
   height: 90vh;
 `
 
@@ -19,7 +18,6 @@ export const CartTitles = styled.h1`
 `
 
 export const FormArea = styled.form`
-  width: 35rem;
   height: 13.5rem;
   display: flex;
 `
