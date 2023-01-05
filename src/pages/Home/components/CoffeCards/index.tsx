@@ -40,6 +40,7 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
     }
 
     addToCart(AddCoffee)
+    alert('Café adicionado ao carrinho')
   }
 
   const formattedPrice = formatMoney(coffee.price)
