@@ -85,6 +85,7 @@ export function Cart() {
                 </p>
               </div>
             </HeaderWrapper>
+
             <DefaultInput
               style={{ width: '12.5rem' }}
               placeholder="CEP"
@@ -98,7 +99,7 @@ export function Cart() {
               {...register('street')}
             />
             <DefaultInput
-              style={{ width: '12.5rem' }}
+              style={{ width: '12.5rem', marginRight: '0.75rem' }}
               placeholder="Número"
               required
               {...register('number')}
@@ -109,13 +110,13 @@ export function Cart() {
               placeholder="Complemento / Opcional"
             />
             <DefaultInput
-              style={{ width: '12.5rem' }}
+              style={{ width: '12.5rem', marginRight: '0.75rem' }}
               placeholder="Bairro"
               required
               {...register('neighborhood')}
             />
             <DefaultInput
-              style={{ width: '17.25rem' }}
+              style={{ width: '17.25rem', marginRight: '0.75rem' }}
               placeholder="Cidade"
               required
               {...register('city')}
