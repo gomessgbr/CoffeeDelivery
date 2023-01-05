@@ -1,4 +1,4 @@
-# COFFEE DELIVERY
+# Coffee Delivery
 
 Projeto desenvolvido no curso Ignite na trilha de react da [RocketSeat](https://app.rocketseat.com.br/?).
 
