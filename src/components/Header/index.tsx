@@ -26,7 +26,9 @@ export function Header() {
         </LocaleContainer>
         <NavLink to="Cart" title="carrinho">
           <ShoppingCart size={24} color="#C47F17" weight="fill" />
-          <CountOfItensonCart>{cartCountToShowOnScreen}</CountOfItensonCart>
+          {cartItems.length > 0 && (
+            <CountOfItensonCart>{cartCountToShowOnScreen}</CountOfItensonCart>
+          )}
         </NavLink>
       </HeaderNav>
     </HeaderContainer>
