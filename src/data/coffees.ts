@@ -1,10 +1,8 @@
-import { v4 as uuidv4 } from 'uuid'
-
 export const coffees = [
   {
     id: 1,
     tags: ['Tradicional'],
-    name: 'Expresso tradicional',
+    name: 'Expresso Tradicional',
     description: 'O tradicional café feito com água quente e grãos moídos',
     photo: 'tradicional.png',
     price: 9.9,
